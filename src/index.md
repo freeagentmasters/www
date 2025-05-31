@@ -1,3 +1,7 @@
+<p class="notice">
+	Are you a Masters player looking for team to play for? Or are you a Team Manger looking to add to your bench? Maybe you are a Tournament Director who wants want help your teams find players? Free Agent Masters are here to help you all!
+</p>
+
 Free Agent Masters is a free service from your friends at [Masters Basketball Tournaments](https://www.mastersbasketballtournaments.com/), the only worldwide directory of Masters basketball tournaments. This idea was born out of the struggles we had breaking into the Masters basketball circuit ourselves and hearing that many others seem to be experiencing the same obstacle.
 
 The idea is simple. A central, worldwide, match-making/clearing house service that aims to help the Masters basketball community grow. If your are a player looking for a team or a Team Manager looking for players, we aim to put you together. An additional benefit for Tournament Directors is that you no longer have to be the intermediary between players and teams, therefore freeing you up for the enormous task of actually putting on the tournament for us players!

@@ -8,7 +8,7 @@
     "start": "rm -rf ./_site && npm-run-all -p dev:*",
     "dev:eleventy": "npx @11ty/eleventy --input ./src/ --serve",
     "build": "npm run build:eleventy",
-    "build:eleventy": "npx @11ty/eleventy --input ./src/ --output ./public/"
+    "build:eleventy": "npx @11ty/eleventy --input ./src/"
   },
   "repository": {
     "type": "git",
