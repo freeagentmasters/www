@@ -1,6 +1,6 @@
 # Thank you!
-	
-You'll get a welcome email soon that will ask you some more questions about what you're looking for.
+
+We'll get an email out to you soon to confirm your details.
 
 Regards,
-The Free Agent Masters team
+Free Agent Masters

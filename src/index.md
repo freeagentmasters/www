@@ -12,8 +12,8 @@ So tell your Masters friends, Team Manager and that hard working Tournament Dire
 
 The information you share here will be treated with respect and not sold or given to any other site, service or person without your consent.
 
-<form name="registration" action="/thank-you" method="POST" data-netlify-recaptcha="true" netlify-honeypot="year" netlify>
-<input name="subject" type="hidden" value="Free Agent Masters Registration from %{formName} - %{formFamilyName} - %{formName}" />
+<form name="Registration" action="/thank-you" method="POST" data-netlify-recaptcha="true" netlify-honeypot="year" netlify>
+<input name="subject" type="hidden" value="Free Agent Masters: %{formName}" />
 <p style="display: none;">
 	<label>
 		Don’t fill this out if you’re human: <input name="year" />
@@ -59,8 +59,8 @@ The information you share here will be treated with respect and not sold or give
 		<label for="teamName">Team name</label>
 		<input id="teamName" name="teamName" type="text">
 	</p>
+My team is looking for players in the following tournament competition:
 	<p>
-		<label for="teamManager">My team is looking for players in the following tournament competition:</label>
 		<select id="teamManager" name="teamManager" size="10">
 			{% for tournament in tournaments %}
 				<optgroup label="{{ tournament.name }}, {{ tournament.location }} ({{ tournament.dates }})">
