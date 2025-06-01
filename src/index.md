@@ -13,6 +13,7 @@ So tell your Masters friends, Team Manager and that hard working Tournament Dire
 The information you share here will be treated with respect and not sold or given to any other site, service or person without your consent.
 
 <form name="registration" action="/thank-you" method="POST" data-netlify-recaptcha="true" netlify-honeypot="year" netlify>
+<input name="subject" type="hidden" value="Free Agent Masters Registration from %{formName} - %{formFamilyName} - %{formName}" />
 <p style="display: none;">
 	<label>
 		Don’t fill this out if you’re human: <input name="year" />
