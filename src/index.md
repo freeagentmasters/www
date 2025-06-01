@@ -1,5 +1,5 @@
 <p class="notice">
-	Are you a Masters player looking for team to play for? Or are you a Team Manger looking to add to your bench? Maybe you are a Tournament Director who wants want help your teams find players? Free Agent Masters are here to help you all!
+	Are you a Masters player looking for team to play for? Or are you a Team Manger looking to add to your squad? Maybe you are a Tournament Director who wants want help your teams find players? Free Agent Masters are here to help you all!
 </p>
 
 Free Agent Masters is a free service from your friends at [Masters Basketball Tournaments](https://www.mastersbasketballtournaments.com/), the only worldwide directory of Masters basketball tournaments. This idea was born out of the struggles we had breaking into the Masters basketball circuit ourselves and hearing that many others seem to be experiencing the same obstacle.
@@ -12,7 +12,12 @@ So tell your Masters friends, Team Manager and that hard working Tournament Dire
 
 The information you share here will be treated with respect and not sold or given to any other site, service or person without your consent.
 
-<form action="/thank-you/" method="POST">
+<form name="registration" action="/thank-you" method="POST" data-netlify-recaptcha="true" netlify-honeypot="year" netlify>
+<p style="display: none;">
+	<label>
+		Don’t fill this out if you’re human: <input name="year" />
+	</label>
+</p>
 <p>
 	<label for="givenname">Given name *</label>
 	<input id="givenname" name="givenname" type="text" required>
@@ -88,6 +93,8 @@ The information you share here will be treated with respect and not sold or give
 </details>
 
 Remember, we'll never share any of your details without your consent and we'll never sell your information to anyone.
+
+<div data-netlify-recaptcha="true"></div>
 
 <button>Send</button>
 </form>
