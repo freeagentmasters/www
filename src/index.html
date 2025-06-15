@@ -69,6 +69,7 @@
 		</select>
 
 		<p>
+			<label for="tournament">Select a tournament</label>
 			<select id="tournament" name="tournament">
 				<option>Select a competition first</option>
 			</select>
@@ -87,9 +88,51 @@
 			<input id="teamName" name="teamName" type="text">
 		</p>
 
-		<p>My team is looking for players in the following tournament competition:</p>
+		<p>My team is looking for players in the following tournament competition</p>
+
+		<!-- <p>
+			<label>Gender</label>
+			<label>
+				<input name="gender" type="radio" hx-get="http://api.cfmx.localhost/freeagentmasters/v1/competitions.html/" hx-trigger="click" hx-target="#teamCompetition" value="Men"> Men
+			</label>
+
+			<label>
+				<input name="gender" type="radio" hx-get="http://api.cfmx.localhost/freeagentmasters/v1/competitions.html/" hx-trigger="click" hx-target="#teamCompetition" value="Women"> Women
+			</label>
+		</p> -->
+
+		<!-- <label for="teamCompetition">Competition</label>
+		<select id="teamCompetition" name="competition" hx-get="http://api.cfmx.localhost/freeagentmasters/v1/tournaments.html/" hx-target="#teamTournament">
+			<option>Select a gender first</option>
+		</select> -->
+
+		<label>Select a men's or women's competition and then a tournament</label>
+		<select id="competition" name="competition" hx-get="http://api.cfmx.localhost/freeagentmasters/v1/tournaments.html/" hx-target="#teamTournament">
+			<option>Men</option>
+			{% for competition in menCompetitions %}
+				<option value="{{ competition.id }}">{{ competition.gender }} {{ competition.ageOver }} and over</option>
+				{{ competition.id }}
+			{% endfor %}
+		</select>&nbsp;
+
+		<select id="competition" name="competition" hx-get="http://api.cfmx.localhost/freeagentmasters/v1/tournaments.html/" hx-target="#teamTournament">
+			<option>Women</option>
+			{% for competition in womenCompetitions %}
+				<option value="{{ competition.id }}">{{ competition.gender }} {{ competition.ageOver }} and over</option>
+				{{ competition.id }}
+			{% endfor %}
+		</select>
+
+
 
 		<p>
+			<label for="teamTournament">Select a tournament</label>
+			<select id="teamTournament" name="teamTournament">
+				<option>Select a competition first</option>
+			</select>
+		</p>
+
+		<!-- <p>
 			<select id="teamManager" name="teamManager" size="10">
 				{% for tournament in tournaments %}
 					<optgroup label="{{ tournament.name }}, {{ tournament.location }} ({{ tournament.dates }})">
@@ -100,7 +143,7 @@
 					<hr>
 				{% endfor %}
 			</select>
-		</p>
+		</p> -->
 	</details>
 
 	<details name="role" >
