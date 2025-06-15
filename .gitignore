@@ -5,3 +5,4 @@
 .vscode/
 _site/
 node_modules/
+.cache
