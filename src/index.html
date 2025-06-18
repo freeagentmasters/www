@@ -22,8 +22,8 @@
 	The information you share here will be treated with respect and not sold or given to any other site, service or person without your consent.
 </p>
 
-<form name="Registration" action="/thank-you" method="POST" data-netlify-recaptcha="true" netlify-honeypot="year" netlify>
-	<input name="subject" type="hidden" value="Free Agent Masters: Registration" />
+<form action="/thank-you" method="POST">
+	<input type="hidden" name="form-name" value="Registration" />
 
 	<p style="display: none;">
 		<label>
@@ -143,8 +143,10 @@
 	<button>Send</button>
 </form>
 
-<form hidden netlify>
-	<input type="hidden" name="form-name" value="Registration" />
+<form name="Registration" action="/thank-you" netlify netlify-honeypot="year" hidden>
+	<input name="subject" type="text" value="Free Agent Masters: Registration" />
+
+	<input name="year" type="text" />
 
 	<input name="player.competition" type="text" />
 	<input name="player.tournament" type="text" />
