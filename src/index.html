@@ -51,7 +51,7 @@
 
 		{%- assign menCompetitions = competitions.data | where: 'gender', 'Men' -%}
 		<label>Select a men's or women's competition and then a tournament</label>
-		<select name="player.competition" hx-get="http://api.cfmx.localhost/freeagentmasters/v1/tournaments.html/" hx-target="#tournament">
+		<select name="player.competition" hx-get="http://api.cfmx.localhost/freeagentmasters/v1/tournaments.html/" hx-target="#player-tournament">
 			<option>Men</option>
 			{% for competition in menCompetitions %}
 				<option value="{{ competition.id }}">{{ competition.gender }} {{ competition.ageOver }} and over</option>
@@ -60,7 +60,7 @@
 		</select>&nbsp;
 
 		{%- assign womenCompetitions = competitions.data | where: 'gender', 'Women' -%}
-		<select name="player.competition" hx-get="http://api.cfmx.localhost/freeagentmasters/v1/tournaments.html/" hx-target="#player.tournament">
+		<select name="player.competition" hx-get="http://api.cfmx.localhost/freeagentmasters/v1/tournaments.html/" hx-target="#player-tournament">
 			<option>Women</option>
 			{% for competition in womenCompetitions %}
 				<option value="{{ competition.id }}">{{ competition.gender }} {{ competition.ageOver }} and over</option>
@@ -69,8 +69,8 @@
 		</select>
 
 		<p>
-			<label for="player.tournament">Select a tournament</label>
-			<select id="player.tournament" name="player.tournament">
+			<label for="player-tournament">Select a tournament</label>
+			<select id="player-tournament" name="player.tournament">
 				<option>Select a competition first</option>
 			</select>
 		</p>
