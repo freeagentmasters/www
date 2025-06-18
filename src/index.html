@@ -23,7 +23,7 @@
 </p>
 
 <form name="Registration" action="/thank-you" method="POST" data-netlify-recaptcha="true" netlify-honeypot="year" netlify>
-	<input name="subject" type="hidden" value="Free Agent Masters: %{formName}" />
+	<input name="subject" type="hidden" value="Free Agent Masters: Registration" />
 
 	<p style="display: none;">
 		<label>
@@ -141,4 +141,12 @@
 	</p>
 
 	<button>Send</button>
+</form>
+
+<form hidden netlify>
+	<input type="hidden" name="form-name" value="Registration" />
+
+	<input name="player.competition" type="text" />
+	<input name="player.tournament" type="text" />
+	<input name="player.profile" type="text" />
 </form>
