@@ -46,20 +46,20 @@
 
 		{%- assign menCompetitions = competitions.data | where: 'gender', 'Men' -%}
 		<label>Select a men's or women's competition and then a tournament</label>
-		<select name="player.competition" hx-get="http://api.cfmx.localhost/freeagentmasters/v1/tournaments.html/" hx-target="#player-tournament">
+		<select name="player.competition" hx-get="{{ site.domain }}/freeagentmasters/v1/tournaments.html/" hx-target="#player-tournament">
 			<option value="">Men</option>
 			{% for competition in menCompetitions %}
-				<option value="{{ competition.identifier }}~{{ competition.id }}">{{ competition.gender }} {{ competition.ageOver }} and over</option>
+				<option value="{{ competition.identifier }}">{{ competition.gender }} {{ competition.ageOver }} and over</option>
 			{% endfor %}
 		</select>
 
 		&nbsp;
 
 		{%- assign womenCompetitions = competitions.data | where: 'gender', 'Women' -%}
-		<select name="player.competition" hx-get="http://api.cfmx.localhost/freeagentmasters/v1/tournaments.html/" hx-target="#player-tournament">
+		<select name="player.competition" hx-get="{{ site.domain }}/freeagentmasters/v1/tournaments.html/" hx-target="#player-tournament">
 			<option value="">Women</option>
 			{% for competition in womenCompetitions %}
-				<option value="{{ competition.identifier }}~{{ competition.id }}">{{ competition.gender }} {{ competition.ageOver }} and over</option>
+				<option value="{{ competition.identifier }}">{{ competition.gender }} {{ competition.ageOver }} and over</option>
 			{% endfor %}
 		</select>
 
@@ -86,7 +86,7 @@
 		<p>My team is looking for players in the following tournament competition</p>
 
 		<label>Select a men's or women's competition and then a tournament</label>
-		<select id="team.competition" name="team.competition" hx-get="http://api.cfmx.localhost/freeagentmasters/v1/tournaments.html/" hx-target="#team.tournament">
+		<select id="team.competition" name="team.competition" hx-get="{{ site.domain }}/freeagentmasters/v1/tournaments.html/" hx-target="#team.tournament">
 			<option>Men</option>
 			{% for competition in menCompetitions %}
 				<option value="{{ competition.id }}">{{ competition.gender }} {{ competition.ageOver }} and over</option>
@@ -94,7 +94,7 @@
 			{% endfor %}
 		</select>&nbsp;
 
-		<select id="team.competition" name="team.competition" hx-get="http://api.cfmx.localhost/freeagentmasters/v1/tournaments.html/" hx-target="#team.tournament">
+		<select id="team.competition" name="team.competition" hx-get="{{ site.domain }}/freeagentmasters/v1/tournaments.html/" hx-target="#team.tournament">
 			<option>Women</option>
 			{% for competition in womenCompetitions %}
 				<option value="{{ competition.id }}">{{ competition.gender }} {{ competition.ageOver }} and over</option>
@@ -117,7 +117,7 @@
 			Select your tournament and then the competitions that are looking for players
 
 			{%- assign tournaments = tournaments.data -%}
-			<select name="director.tournament" hx-get="http://api.cfmx.localhost/freeagentmasters/v1/competitions.html/?element=checkboxes&content=competitions" hx-target="#competitions">
+			<select name="director.tournament" hx-get="{{ site.domain }}/freeagentmasters/v1/competitions.html/?element=checkboxes&content=competitions" hx-target="#competitions">
 				<option>Select a tournament</option>
 				<hr />
 				{% for tournament in tournaments %}
