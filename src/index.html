@@ -24,12 +24,7 @@
 
 <form method="POST">
 	<input type="hidden" name="form-name" value="Registration" />
-
-	<!-- <p style="display: none;">
-		<label>
-			Don’t fill this out if you’re human: <input name="year" />
-		</label>
-	</p> -->
+	<input name="subject" type="hidden" value="Free Agent Masters: Registration" />
 
 	<p>
 		<label for="givenname">Given name *</label>
@@ -46,25 +41,25 @@
 		<input id="email" name="email" type="email" required>
 	</p>
 
-	<details name="role" >
+	<details name="player" >
 		<summary>I am a <strong>PLAYER</strong> looking for a team to play for at a tournament</summary>
 
 		{%- assign menCompetitions = competitions.data | where: 'gender', 'Men' -%}
 		<label>Select a men's or women's competition and then a tournament</label>
 		<select name="player.competition" hx-get="http://api.cfmx.localhost/freeagentmasters/v1/tournaments.html/" hx-target="#player-tournament">
-			<option>Men</option>
+			<option value="">Men</option>
 			{% for competition in menCompetitions %}
-				<option value="{{ competition.id }}">{{ competition.gender }} {{ competition.ageOver }} and over</option>
-				{{ competition.id }}
+				<option value="{{ competition.identifier }}~{{ competition.id }}">{{ competition.gender }} {{ competition.ageOver }} and over</option>
 			{% endfor %}
-		</select>&nbsp;
+		</select>
+
+		&nbsp;
 
 		{%- assign womenCompetitions = competitions.data | where: 'gender', 'Women' -%}
 		<select name="player.competition" hx-get="http://api.cfmx.localhost/freeagentmasters/v1/tournaments.html/" hx-target="#player-tournament">
-			<option>Women</option>
+			<option value="">Women</option>
 			{% for competition in womenCompetitions %}
-				<option value="{{ competition.id }}">{{ competition.gender }} {{ competition.ageOver }} and over</option>
-				{{ competition.id }}
+				<option value="{{ competition.identifier }}~{{ competition.id }}">{{ competition.gender }} {{ competition.ageOver }} and over</option>
 			{% endfor %}
 		</select>
 
@@ -81,7 +76,7 @@
 		</p>
 	</details>
 
-	<details name="role" >
+	<details name="manager" >
 		<summary>I am a <strong>TEAM MANAGER</strong> looking for players to join my team at a tournament</summary>
 		<p>
 			<label for="team.name">Team name</label>
@@ -115,7 +110,7 @@
 		</p>
 	</details>
 
-	<details name="role" >
+	<details name="director" >
 		<summary>I am a <strong>TOURNAMENT DIRECTOR</strong> looking to find players for my teams</summary>
 
 		<label>
@@ -148,8 +143,18 @@
 
 	<input name="year" type="text" />
 
+	<input name="givenname" type="text">
+	<input name="familyname" type="text">
+	<input name="email" type="email">
+
 	<input name="player.competition" type="text" />
 	<input name="player.tournament" type="text" />
 	<input name="player.profile" type="text" />
+
 	<input name="team.name" type="text" />
+	<input name="team.competition" type="text" />
+	<input name="team.tournament" type="text" />
+
+	<input name="director.tournament" type="text" />
+	<input name="director.competitions" type="text" />
 </form>
