@@ -89,16 +89,14 @@
 		<select id="team.competition" name="team.competition" hx-get="{{ site.domain }}/freeagentmasters/v1/tournaments.html" hx-target="#team-tournament">
 			<option>Men</option>
 			{% for competition in menCompetitions %}
-				<option value="{{ competition.id }}">{{ competition.gender }} {{ competition.ageOver }} and over</option>
-				{{ competition.id }}
+				<option value="{{ competition.identifier }}">{{ competition.gender }} {{ competition.ageOver }} and over</option>
 			{% endfor %}
 		</select>&nbsp;
 
 		<select id="team.competition" name="team.competition" hx-get="{{ site.domain }}/freeagentmasters/v1/tournaments.html" hx-target="#team-tournament">
 			<option>Women</option>
 			{% for competition in womenCompetitions %}
-				<option value="{{ competition.id }}">{{ competition.gender }} {{ competition.ageOver }} and over</option>
-				{{ competition.id }}
+				<option value="{{ competition.identifier }}">{{ competition.gender }} {{ competition.ageOver }} and over</option>
 			{% endfor %}
 		</select>
 
