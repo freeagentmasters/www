@@ -86,7 +86,7 @@
 		<p>My team is looking for players in the following tournament competition</p>
 
 		<label>Select a men's or women's competition and then a tournament</label>
-		<select id="team.competition" name="team.competition" hx-get="{{ site.domain }}/freeagentmasters/v1/tournaments.html" hx-target="#team.tournament">
+		<select id="team.competition" name="team.competition" hx-get="{{ site.domain }}/freeagentmasters/v1/tournaments.html" hx-target="#team-tournament">
 			<option>Men</option>
 			{% for competition in menCompetitions %}
 				<option value="{{ competition.id }}">{{ competition.gender }} {{ competition.ageOver }} and over</option>
@@ -94,7 +94,7 @@
 			{% endfor %}
 		</select>&nbsp;
 
-		<select id="team.competition" name="team.competition" hx-get="{{ site.domain }}/freeagentmasters/v1/tournaments.html" hx-target="#team.tournament">
+		<select id="team.competition" name="team.competition" hx-get="{{ site.domain }}/freeagentmasters/v1/tournaments.html" hx-target="#team-tournament">
 			<option>Women</option>
 			{% for competition in womenCompetitions %}
 				<option value="{{ competition.id }}">{{ competition.gender }} {{ competition.ageOver }} and over</option>
@@ -103,8 +103,8 @@
 		</select>
 
 		<p>
-			<label for="team.tournament">Select a tournament</label>
-			<select id="team.tournament" name="team.tournament">
+			<label for="team-tournament">Select a tournament</label>
+			<select id="team-tournament" name="team.tournament">
 				<option>Select a competition first</option>
 			</select>
 		</p>
