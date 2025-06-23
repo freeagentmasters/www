@@ -46,7 +46,7 @@
 
 		{%- assign menCompetitions = competitions.data | where: 'gender', 'Men' -%}
 		<label>Select a men's or women's competition and then a tournament</label>
-		<select name="player.competition" hx-get="{{ site.domain }}/freeagentmasters/v1/tournaments.html?role=player" hx-target="#player-tournament">
+		<select name="player_competition" hx-get="{{ site.domain }}/freeagentmasters/v1/tournaments.html" hx-target="#player_tournament">
 			<option value="">Men</option>
 			{% for competition in menCompetitions %}
 				<option value="{{ competition.identifier }}">{{ competition.gender }} {{ competition.ageOver }} and over</option>
@@ -56,7 +56,7 @@
 		&nbsp;
 
 		{%- assign womenCompetitions = competitions.data | where: 'gender', 'Women' -%}
-		<select name="player.competition" hx-get="{{ site.domain }}/freeagentmasters/v1/tournaments.html?role=player" hx-target="#player-tournament">
+		<select name="player_competition" hx-get="{{ site.domain }}/freeagentmasters/v1/tournaments.html" hx-target="#player_tournament">
 			<option value="">Women</option>
 			{% for competition in womenCompetitions %}
 				<option value="{{ competition.identifier }}">{{ competition.gender }} {{ competition.ageOver }} and over</option>
@@ -64,36 +64,36 @@
 		</select>
 
 		<p>
-			<label for="player-tournament">Select a tournament</label>
-			<select id="player-tournament" name="player.tournament">
+			<label for="player_tournament">Select a tournament</label>
+			<select id="player_tournament" name="player_tournament">
 				<option>Select a competition first</option>
 			</select>
 		</p>
 
 		<p>
-			<label for="player.profile">Playing experience</label>
-			<textarea id="player.profile" name="player.profile" rows="6"></textarea>
+			<label for="player_profile">Playing experience</label>
+			<textarea name="player_profile" rows="6"></textarea>
 		</p>
 	</details>
 
 	<details name="manager" >
 		<summary>I am a <strong>TEAM MANAGER</strong> looking for players to join my team at a tournament</summary>
 		<p>
-			<label for="team.name">Team name</label>
-			<input id="team.name" name="team.name" type="text">
+			<label for="team_name">Team name</label>
+			<input name="team_name" type="text">
 		</p>
 
 		<p>My team is looking for players in the following tournament competition</p>
 
 		<label>Select a men's or women's competition and then a tournament</label>
-		<select id="team.competition" name="team.competition" hx-get="{{ site.domain }}/freeagentmasters/v1/tournaments.html?role=manager" hx-target="#team-tournament">
+		<select name="team_competition" hx-get="{{ site.domain }}/freeagentmasters/v1/tournaments.html" hx-target="#team_tournament">
 			<option>Men</option>
 			{% for competition in menCompetitions %}
 				<option value="{{ competition.identifier }}">{{ competition.gender }} {{ competition.ageOver }} and over</option>
 			{% endfor %}
 		</select>&nbsp;
 
-		<select id="team.competition" name="team.competition" hx-get="{{ site.domain }}/freeagentmasters/v1/tournaments.html?role=manager" hx-target="#team-tournament">
+		<select name="team_competition" hx-get="{{ site.domain }}/freeagentmasters/v1/tournaments.html" hx-target="#team_tournament">
 			<option>Women</option>
 			{% for competition in womenCompetitions %}
 				<option value="{{ competition.identifier }}">{{ competition.gender }} {{ competition.ageOver }} and over</option>
@@ -101,8 +101,8 @@
 		</select>
 
 		<p>
-			<label for="team-tournament">Select a tournament</label>
-			<select id="team-tournament" name="team.tournament">
+			<label for="team_tournament">Select a tournament</label>
+			<select id="team_tournament" name="team_tournament">
 				<option>Select a competition first</option>
 			</select>
 		</p>
@@ -115,7 +115,7 @@
 			Select your tournament and then the competitions that are looking for players
 
 			{%- assign tournaments = tournaments.data -%}
-			<select name="director.tournament" hx-get="{{ site.domain }}/freeagentmasters/v1/competitions.html?element=checkboxes&content=competitions" hx-target="#competitions">
+			<select name="director_tournament" hx-get="{{ site.domain }}/freeagentmasters/v1/competitions.html?element=checkboxes&content=competitions" hx-target="#director_competitions">
 				<option>Select a tournament</option>
 				<hr />
 				{% for tournament in tournaments %}
@@ -124,7 +124,7 @@
 			</select>
 		</label>
 
-		<div id="competitions"></div>
+		<div id="director_competitions"></div>
 	</details>
 
 	<p>Remember, we'll never share any of your details without your consent and we'll never sell your information to anyone.</p>
@@ -145,14 +145,14 @@
 	<input name="familyname" type="text">
 	<input name="email" type="email">
 
-	<input name="player.competition" type="text" />
-	<input name="player.tournament" type="text" />
-	<input name="player.profile" type="text" />
+	<input name="player_competition" type="text" />
+	<input name="player_tournament" type="text" />
+	<input name="player_profile" type="text" />
 
-	<input name="team.name" type="text" />
-	<input name="team.competition" type="text" />
-	<input name="team.tournament" type="text" />
+	<input name="team_name" type="text" />
+	<input name="team_competition" type="text" />
+	<input name="team_tournament" type="text" />
 
-	<input name="director.tournament" type="text" />
-	<input name="director.competitions" type="text" />
+	<input name="director_tournament" type="text" />
+	<input name="director_competitions" type="text" />
 </form>
