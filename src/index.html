@@ -47,7 +47,7 @@
 		{%- assign menCompetitions = competitions.data | where: 'gender', 'Men' -%}
 		<label>Select a men's or women's competition and then a tournament</label>
 		<select name="player_competition" hx-get="{{ site.domain }}/freeagentmasters/v1/tournaments.html" hx-target="#player_tournament">
-			<option value="">Men</option>
+			<option>Men</option>
 			{% for competition in menCompetitions %}
 				<option value="{{ competition.identifier }}">{{ competition.gender }} {{ competition.ageOver }} and over</option>
 			{% endfor %}
@@ -57,7 +57,7 @@
 
 		{%- assign womenCompetitions = competitions.data | where: 'gender', 'Women' -%}
 		<select name="player_competition" hx-get="{{ site.domain }}/freeagentmasters/v1/tournaments.html" hx-target="#player_tournament">
-			<option value="">Women</option>
+			<option>Women</option>
 			{% for competition in womenCompetitions %}
 				<option value="{{ competition.identifier }}">{{ competition.gender }} {{ competition.ageOver }} and over</option>
 			{% endfor %}
